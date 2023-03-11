@@ -1,0 +1,40 @@
+.services-section {
+  @extend .section;
+}
+
+.services-container {
+  position: relative;
+  @extend .container;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.services__title {
+  @extend .section-title;
+}
+
+.services__message {
+  @extend .section-message;
+  margin-top: 13px;
+}
+
+.services__filter-list {
+  display: flex;
+  gap: 77px;
+  margin-top: 30px;
+}
+.services__filter-button {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 2.25;
+  border: 5px solid $first-accent-color;
+  border-radius: 20px;
+  min-width: 206px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.services__content-list {
+  padding-top: 110px;
+}

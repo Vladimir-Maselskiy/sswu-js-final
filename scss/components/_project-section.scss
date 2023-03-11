@@ -1,0 +1,49 @@
+.project-section {
+  @extend .section;
+}
+
+.project-container {
+  position: relative;
+  @extend .container;
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-left-aside-block {
+  width: 635px;
+  flex-shrink: 0;
+  margin-top: 70px;
+}
+.project__title {
+  @extend .section-title;
+}
+
+.project__message {
+  @extend .section-message;
+  margin-top: 13px;
+}
+
+.project__description {
+  @extend .section-description;
+  margin-top: 25px;
+}
+.project__button {
+  @extend .section-button;
+  margin-top: 50px;
+}
+
+.project-right-aside-block {
+  margin-left: auto;
+}
+
+.project__image {
+  @include getImageWithBorder(
+    715px,
+    613px,
+    -32px,
+    -35px,
+    '../images/project-img.jpg'
+  );
+  margin-top: 32px;
+  margin-left: 35px;
+}

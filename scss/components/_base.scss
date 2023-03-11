@@ -1,0 +1,64 @@
+.section {
+  width: 100%;
+  max-width: 2500px;
+}
+
+.container {
+  max-width: 1920px;
+  margin: 0 auto;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.section-title {
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.38;
+  color: $first-text-color;
+}
+
+.section-message {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 1.08;
+  color: $second-text-color;
+}
+.section-description {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1, 67;
+  color: $third-text-color;
+}
+.section-button {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2.67;
+  padding-left: 30px;
+  padding-right: 30px;
+  background-color: $first-accent-color;
+  color: $white-text;
+  border: none;
+  border-radius: 15px 0px;
+  text-align: center;
+}
+
+@mixin getImageWithBorder($width, $height, $top, $left, $url) {
+  width: $width;
+  height: $height;
+  border: 2px solid $first-border-color;
+  border-radius: 140px 0px;
+  &::before {
+    content: '';
+    display: block;
+    position: relative;
+    left: $left;
+    top: $top;
+    width: $width;
+    height: $height;
+    border-radius: 140px 0px;
+    background-image: url($url);
+  }
+}
