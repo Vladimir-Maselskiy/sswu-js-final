@@ -7,6 +7,7 @@
     <title>DECBASE</title>
     <link rel="stylesheet" href="./css/main.min.css" />
   </head>
+
   <body>
     <header class="header-section">
       <div class="header-container">
@@ -50,22 +51,31 @@
       <div class="services-container">
         <h2 class="services__title">WHAT WE DO</h2>
         <p class="services__message">Our Service</p>
-        <ul class="services__filter-list">
+        <ul class="services__filter-list" id="service">
           <li class="services__filter-item">
-            <button class="services__filter-button">ALL</button>
+            <button class="services__filter-button" data-filter="all">
+              ALL
+            </button>
           </li>
           <li class="services__filter-item">
-            <button class="services__filter-button">INTERIOR DESIGN</button>
+            <button class="services__filter-button" data-filter="interior">
+              INTERIOR DESIGN
+            </button>
           </li>
           <li class="services__filter-item">
-            <button class="services__filter-button">ARCHITECTURE</button>
+            <button class="services__filter-button" data-filter="architecture">
+              ARCHITECTURE
+            </button>
           </li>
           <li class="services__filter-item">
-            <button class="services__filter-button">PLANNING</button>
+            <button class="services__filter-button" data-filter="planning">
+              PLANNING
+            </button>
           </li>
         </ul>
-        <ul class="services__content-list"></ul>
+        <div class="services__content" id="serviceContent"></div>
       </div>
     </section>
+    <script type="module" src="index.js"></script>
   </body>
 </html>
