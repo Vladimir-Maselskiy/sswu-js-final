@@ -1,0 +1,75 @@
+.about-section {
+  @extend .section;
+}
+
+.about-container {
+  position: relative;
+  @extend .container;
+  padding-top: 144px;
+}
+.about-top-box,
+.about-bottom-box {
+  display: flex;
+  justify-content: center;
+  gap: 130px;
+}
+.about-bottom-box {
+  margin-top: 199px;
+}
+
+.about-top-box__title {
+  @extend .section-title;
+}
+
+.about-top-box__message {
+  @extend .section-message;
+  margin-top: 59px;
+}
+
+.about-top-box__description {
+  @extend .section-description;
+  margin-top: 25px;
+}
+.about-top-box__button,
+.about-bottom-box__button {
+  @extend .section-button;
+  margin-top: 50px;
+}
+
+.about-top-box__right-aside-block,
+.about-bottom-box__left-aside-block {
+  max-width: 560px;
+}
+
+.about-bottom-box__left-aside-block {
+  padding-top: 50px;
+}
+
+.about-top-box__image {
+  @include getImageWithBorder(
+    680px,
+    711px,
+    32px,
+    36px,
+    '../../images/pexels-vecislavas.jpg'
+  );
+  margin-bottom: 32px;
+  margin-right: 36px;
+}
+
+.about-bottom-box__message {
+  @extend .section-message;
+  margin-top: 20px;
+  font-size: 66px;
+}
+.about-bottom-box__image {
+  @include getImageWithBorder(
+    680px,
+    711px,
+    -28px,
+    -31px,
+    '../../images/pexels-lisa.png'
+  );
+  margin-top: 28px;
+  margin-left: 31px;
+}
