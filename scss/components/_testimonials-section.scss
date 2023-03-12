@@ -1,0 +1,108 @@
+.testimonials-section {
+  @extend .section;
+  //   background-color: rgba(224, 224, 224, 1);
+}
+
+.testimonials-container {
+  position: relative;
+  @extend .container;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 133px;
+  padding-bottom: 145px;
+}
+
+.testimonials__title {
+  @extend .section-title;
+}
+
+.testimonials__message {
+  @extend .section-message;
+  margin-top: 13px;
+}
+.testimonials__buttons-block {
+  display: flex;
+  justify-content: space-between;
+  width: 113px;
+  margin-left: auto;
+}
+
+.testimonials__button {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.3);
+  background-image: url('../../images/arrow_left_gray.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  stroke: #646464;
+  fill: #646464;
+  &.next {
+    background-image: url('../../images/arrow_right_gray.svg');
+  }
+  &:hover {
+    background-image: url('../../images/arrow_left_white.svg');
+    background-color: $first-accent-color;
+    &.next {
+      background-image: url('../../images/arrow_right_white.svg');
+    }
+  }
+}
+.swiper {
+  width: 100%;
+}
+
+.testimonials_slide {
+  display: flex;
+  justify-content: center;
+  gap: 225px;
+  padding-bottom: 100px;
+}
+
+.testimonials__item {
+  position: relative;
+  padding: 41px 42px 60px 95px;
+  margin-left: 65px;
+  margin-top: 99px;
+  background-color: $white-color;
+  width: 571px;
+  box-shadow: 7px 7px 30px 5px rgba(66, 96, 84, 0.15);
+  border-radius: 70px 0px;
+  &::after {
+    content: '';
+    position: absolute;
+    top: 40px;
+    right: 0;
+    width: 42px;
+    height: 121px;
+    background-repeat: no-repeat;
+    background-image: url('../../images/”.png');
+  }
+}
+
+.testimonials__item-name {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.38;
+  color: $second-text-color;
+}
+.testimonials__item-position {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.38;
+  color: $third-text-color;
+}
+
+.testimonials__item-description {
+  @extend .section-description;
+  margin-top: 8px;
+}
+
+.testimonials__item-image {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 30px 0px;
+}

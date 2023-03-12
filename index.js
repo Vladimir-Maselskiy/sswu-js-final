@@ -2,6 +2,13 @@ import { serviceRef } from './refs.js';
 import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
+new Swiper('.swiper', {
+  loop: true,
+  navigation: {
+    nextEl: '.testimonials__button.next',
+    prevEl: '.testimonials__button.prev',
+  },
+});
 
 let serviceContent = {};
 let filterButton = 'all';

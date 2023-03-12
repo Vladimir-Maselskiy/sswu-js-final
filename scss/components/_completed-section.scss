@@ -92,3 +92,16 @@
     top: 91px;
   }
 }
+
+.completed__visualization__quantity {
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 1.2;
+  color: $second-text-color;
+}
+.completed__visualization__group {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.67;
+  color: $third-text-color;
+}
