@@ -1,5 +1,5 @@
 export const fetchService = async () => {
-  return await fetch('../data/service.json', {
+  const data = await fetch('../data/service.json', {
     headers: {
       'Content-Type': 'application/json',
       Accept: 'application/json',
@@ -10,4 +10,5 @@ export const fetchService = async () => {
       return res.json();
     })
     .catch(error => console.log('error in fetchService', error));
+  return data;
 };
