@@ -1,9 +1,16 @@
 body {
-  font-family: 'Poppins', 'Open Sans', 'Volkhov', 'Montserrat', sans-serif;
+  font-family: 'Open Sans', 'Poppins', 'Volkhov', 'Montserrat', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 * {
   box-sizing: border-box;
+}
+a {
+  text-decoration: none;
 }
 
 body,

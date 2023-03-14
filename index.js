@@ -1,4 +1,4 @@
-import { serviceRef, formRef } from './refs.js';
+import { serviceRef, formRef, copyRightRef } from './refs.js';
 import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
@@ -41,6 +41,12 @@ const setActiveStatusToButtonsOnClick = filter => {
   });
   showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
 };
+
+(function () {
+  const year = new Date().getFullYear();
+  copyRightRef.textContent = `Copyright @ ${year} Brandoxide.all right reserved.`;
+  console.log('iife', year);
+})();
 
 const onFilterListClick = e => {
   setActiveStatusToButtonsOnClick(e.target.dataset.filter);

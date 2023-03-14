@@ -13,11 +13,7 @@
 }
 
 .header-logo {
-  min-width: 150.76px;
-  height: 46.04px;
-  background-repeat: no-repeat;
-  background-image: url('../images/logo.png');
-  background-size: contain;
+  @extend .logo;
 }
 
 .header-nav {
@@ -35,13 +31,12 @@
   border-radius: 20px;
   padding: 5px;
   color: $first-text-color;
-  transition: transform 0.5s, color 0.5s, border 0.5s, font-weight 0.5s;
+  transition: transform 0.5s, color 0.5s, border-color 0.5s;
 
   &:hover {
     border: 5px solid $first-accent-color;
     border-radius: 20px;
     color: $first-accent-color;
-    font-weight: 700;
     cursor: pointer;
   }
 }

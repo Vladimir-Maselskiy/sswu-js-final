@@ -6,6 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DECBASE</title>
     <link rel="stylesheet" href="./css/main.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
@@ -13,17 +19,31 @@
   </head>
 
   <body>
-    <header class="header-section">
+    <header class="header-section" id="home">
       <div class="header-container">
         <div class="header-logo"></div>
         <ul class="header-nav">
-          <li class="header-nav__item">HOME</li>
-          <li class="header-nav__item">PROJECT</li>
-          <li class="header-nav__item">SERVICES</li>
-          <li class="header-nav__item">ABOUT</li>
-          <li class="header-nav__item">BLOG</li>
-          <li class="header-nav__item">SHOP</li>
-          <li class="header-nav__item">CONTACT</li>
+          <li class="header-nav__item">
+            <a href="#home">HOME</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#project">PROJECT</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#services">SERVICES</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#about">ABOUT</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#news">BLOG</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#form">SHOP</a>
+          </li>
+          <li class="header-nav__item">
+            <a href="#footer">CONTACT</a>
+          </li>
         </ul>
         <div class="header-auth">
           <a>Sign</a>
@@ -33,7 +53,7 @@
       <div class="header-background"></div>
     </header>
 
-    <section class="project-section">
+    <section class="project-section" id="project">
       <div class="project-container">
         <div class="project-left-aside-block">
           <h2 class="project__title">MODERN INTERIOR</h2>
@@ -51,7 +71,7 @@
       </div>
     </section>
 
-    <section class="services-section">
+    <section class="services-section" id="services">
       <div class="services-container">
         <h2 class="services__title">WHAT WE DO</h2>
         <p class="services__message">Our Service</p>
@@ -81,7 +101,7 @@
       </div>
     </section>
 
-    <section class="about-section">
+    <section class="about-section" id="about">
       <div class="about-container">
         <div class="about-top-box">
           <div class="about-top-box__left-aside-block">
@@ -121,7 +141,7 @@
       </div>
     </section>
 
-    <section class="completed-section">
+    <section class="completed-section" id="completed">
       <div class="completed-container">
         <p class="completed__message">
           3000+ Completed Work<br />
@@ -288,7 +308,7 @@
       </div>
     </section>
 
-    <section class="news-section">
+    <section class="news-section" id="news">
       <div class="news-container">
         <h2 class="news__title">LETEST NEWS</h2>
         <p class="news__message">From Our Blog</p>
@@ -317,7 +337,7 @@
       </div>
     </section>
 
-    <section class="form-section">
+    <section class="form-section" id="form">
       <div class="form-container">
         <h2 class="form__message">DON’T FORGET TO SIGN UP</h2>
         <p class="form__description">
@@ -353,89 +373,84 @@
       </div>
     </section>
 
-    <section class="footer-section">
+    <footer class="footer-section" id="footer">
       <div class="footer-container">
         <div class="footer-main-block">
           <div class="footer-logo-block">
-            <p class="footer-logo-block__logo">Jadoo.</p>
+            <div class="footer-logo-block__logo"></div>
             <p class="footer-logo-block__description">
-              Book your trip in minute, get full Control for much longer.
+              But i must explain to you all this mistaken idea of dencouncing
+              pleasure.
             </p>
           </div>
           <ul class="footer-menu-list">
             <li>
+              <p class="footer-menu-title">Quick Links</p>
+              <ul>
+                <li class="footer-menu-item">About Our Company</li>
+                <li class="footer-menu-item">Services WE provide</li>
+                <li class="footer-menu-item">Career & Opportunity</li>
+                <li class="footer-menu-item">Privacy & policy</li>
+                <li class="footer-menu-item">Contact US</li>
+              </ul>
+            </li>
+            <li>
               <p class="footer-menu-title">Company</p>
               <ul>
-                <li class="footer-menu-item">About</li>
-                <li class="footer-menu-item">Careers</li>
-                <li class="footer-menu-item">Careers</li>
+                <li class="footer-menu-item">About Company</li>
+                <li class="footer-menu-item">Our Testimonials</li>
+                <li class="footer-menu-item">Latest News</li>
+                <li class="footer-menu-item">News Our mission</li>
+                <li class="footer-menu-item">Get a free Quot</li>
               </ul>
             </li>
             <li>
-              <p class="footer-menu-title">Contact</p>
+              <p class="footer-menu-title">Contact us</p>
               <ul>
-                <li class="footer-menu-item">Help/FAQ</li>
-                <li class="footer-menu-item">Press</li>
-                <li class="footer-menu-item">Affilates</li>
-              </ul>
-            </li>
-            <li>
-              <p class="footer-menu-title">More</p>
-              <ul>
-                <li class="footer-menu-item">Airlinefees</li>
-                <li class="footer-menu-item">Airline</li>
-                <li class="footer-menu-item">Low fare tips</li>
+                <li class="footer-menu-item">Sagrada Familia, Herba</li>
+                <li class="footer-menu-item">Street Front USA</li>
+                <li class="footer-menu-item">brandoxide@gmail.com</li>
+                <li class="footer-menu-item">002-568423591</li>
               </ul>
             </li>
           </ul>
           <div class="footer-social-links">
+            <p class="footer-social-links__title">Follow Us</p>
             <ul class="social-links-list">
               <li class="social-links-item">
                 <a
                   href="https://uk-ua.facebook.com/"
                   target="_blank"
-                  class="social-links-item__link_facebook"
-                ></a>
-              </li>
-              <li class="social-links-item">
-                <a
-                  href="https://www.instagram.com/"
-                  target="_blank"
-                  class="social-links-item__link_instagram"
+                  class="social-links-item__link facebook"
                 ></a>
               </li>
               <li class="social-links-item">
                 <a
                   href="https://twitter.com"
                   target="_blank"
-                  class="social-links-item__link_twitter"
+                  class="social-links-item__link twitter"
                 ></a>
               </li>
-            </ul>
-            <p class="footer-social-links__title">Discover our app</p>
-            <ul class="footer-mobile-store-list">
-              <li class="footer-mobile-store-item">
+              <li class="social-links-item">
                 <a
+                  href="https://www.instagram.com/"
                   target="_blank"
-                  href="https://play.google.com/store"
-                  class="social-mobile-store-item__link_google"
-                >
-                </a>
+                  class="social-links-item__link instagram"
+                ></a>
               </li>
-              <li class="footer-mobile-store-item">
+              <li class="social-links-item">
                 <a
+                  href="https://www.linkedin.com"
                   target="_blank"
-                  href="https://www.apple.com/ua/app-store/"
-                  class="social-mobile-store-item__link_ios"
-                >
-                </a>
+                  class="social-links-item__link linkedIn"
+                ></a>
               </li>
             </ul>
           </div>
         </div>
-        <p class="footer-copyright-message">All rights reserved@jadoo.co</p>
+        <p class="footer-copyright-message"></p>
       </div>
-    </section>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
     <script type="module" src="index.js"></script>

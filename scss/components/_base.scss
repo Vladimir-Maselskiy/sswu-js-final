@@ -28,7 +28,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 18px;
-  line-height: 1, 67;
+  line-height: 1.67;
   color: $third-text-color;
 }
 .section-button {
@@ -61,4 +61,11 @@
     border-radius: 140px 0px;
     background-image: url($url);
   }
+}
+.logo {
+  min-width: 150.76px;
+  height: 46.04px;
+  background-repeat: no-repeat;
+  background-image: url('../images/logo.png');
+  background-size: contain;
 }

@@ -35,6 +35,7 @@
   color: $white-color;
   background-color: $first-accent-color;
   cursor: pointer;
+  transition: background-color 0.5s, color 0.5s;
   &.activ {
     color: $first-accent-color;
     background-color: transparent;
