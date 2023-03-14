@@ -1,4 +1,4 @@
-import { serviceRef } from './refs.js';
+import { serviceRef, formRef } from './refs.js';
 import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
@@ -45,7 +45,30 @@ const setActiveStatusToButtonsOnClick = filter => {
 const onFilterListClick = e => {
   setActiveStatusToButtonsOnClick(e.target.dataset.filter);
 };
+
+const onInputChange = e => {
+  const isValid = e.target.validity.valid;
+  e.target.setValidationMessage =
+    'Тільки латинські літери, перша літера у верхньому регістрі';
+  console.log(e.target);
+};
+const onSubmitForm = e => {
+  e.preventDefault();
+  const { name, surname, email } = e.target.children;
+  const user = {
+    name: name.value,
+    surname: surname.value,
+    email: email.value,
+  };
+  localStorage.setItem('user', JSON.stringify(user));
+  if (user.name === 'Volodymyr') {
+    console.log('animation');
+  }
+};
+
 service.addEventListener('click', onFilterListClick);
+formRef.addEventListener('change', onInputChange);
+formRef.addEventListener('submit', onSubmitForm);
 
 fetchService().then(data => {
   serviceContent = data;

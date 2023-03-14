@@ -1,0 +1,75 @@
+.form-section {
+  @extend .section;
+}
+
+.form-container {
+  @extend .container;
+  padding-top: 70px;
+  padding-bottom: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form__message {
+  @extend .section-message;
+  position: relative;
+  font-weight: 500;
+  font-size: 48px;
+  &::after {
+    content: '';
+    position: absolute;
+    width: 67%;
+    border-bottom: 2px solid $fourth-text-color;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.form__description {
+  @extend .section-description;
+  margin-top: 77px;
+  max-width: 647px;
+  text-align: center;
+}
+
+.form__content-block {
+  display: flex;
+  justify-content: center;
+  gap: 221px;
+  margin-top: 82px;
+}
+
+.user-form {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 58px;
+  width: 100%;
+  max-width: 772px;
+  margin-top: 39px;
+}
+.user-form input {
+  background-color: $third-background-color;
+  border: none;
+  border-radius: 20px 0px;
+  height: 48px;
+  padding-left: 36px;
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.user-form__inpute-name,
+.user-form__inpute-surname {
+  width: 317px;
+}
+.user-form__inpute-email {
+  width: 100%;
+}
+
+.form__button {
+  @extend .section-button;
+  border-top-left-radius: 0;
+  margin: 0 auto;
+}
