@@ -32,19 +32,19 @@
   height: 30px;
   border-radius: 50%;
   box-shadow: -1px 3px 10px rgba(0, 0, 0, 0.3);
-  background-image: url('../../images/arrow_left_gray.svg');
+  background-image: url('../images/arrow_left_gray.svg');
   background-repeat: no-repeat;
   background-position: center;
   stroke: #646464;
   fill: #646464;
   &.next {
-    background-image: url('../../images/arrow_right_gray.svg');
+    background-image: url('../images/arrow_right_gray.svg');
   }
   &:hover {
-    background-image: url('../../images/arrow_left_white.svg');
+    background-image: url('../images/arrow_left_white.svg');
     background-color: $first-accent-color;
     &.next {
-      background-image: url('../../images/arrow_right_white.svg');
+      background-image: url('../images/arrow_right_white.svg');
     }
   }
 }
