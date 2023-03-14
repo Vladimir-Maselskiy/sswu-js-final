@@ -6,12 +6,13 @@
   position: relative;
   @extend .container;
   display: flex;
-  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
 }
 
 .project-left-aside-block {
-  width: 635px;
-  flex-shrink: 0;
+  width: 40%;
+  max-width: 635px;
   margin-top: 70px;
 }
 .project__title {
@@ -33,12 +34,12 @@
 }
 
 .project-right-aside-block {
-  margin-left: auto;
+  width: 40%;
 }
 
 .project__image {
   @include getImageWithBorder(
-    715px,
+    100%,
     613px,
     -32px,
     -35px,

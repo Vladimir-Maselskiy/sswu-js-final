@@ -39,7 +39,13 @@
 
 .about-top-box__right-aside-block,
 .about-bottom-box__left-aside-block {
+  width: 38%;
   max-width: 560px;
+}
+.about-top-box__left-aside-block,
+.about-bottom-box__right-aside-block {
+  width: 50%;
+  max-width: 716px;
 }
 
 .about-bottom-box__left-aside-block {
@@ -48,7 +54,7 @@
 
 .about-top-box__image {
   @include getImageWithBorder(
-    680px,
+    100%,
     711px,
     32px,
     36px,
@@ -65,7 +71,7 @@
 }
 .about-bottom-box__image {
   @include getImageWithBorder(
-    680px,
+    100%,
     711px,
     -28px,
     -31px,
