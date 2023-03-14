@@ -126,6 +126,9 @@ window.addEventListener('load', onLoadWindow);
 
 // -----------імітація отримання json для секції з фільтром------------
 fetchService().then(data => {
+  console.log('data', data);
   serviceContent = data;
-  showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
+  showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent)).catch(
+    error => console.log('error in index', error)
+  );
 });
