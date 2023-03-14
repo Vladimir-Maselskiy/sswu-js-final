@@ -14,6 +14,13 @@ new Swiper('.swiper', {
     nextEl: '.testimonials__button.next',
     prevEl: '.testimonials__button.prev',
   },
+  breakpoints: {
+    // when window width is >= 760px
+    1060: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+  },
 });
 // ініціалізація значення контенту секції з фільтром
 let serviceContent = {};
