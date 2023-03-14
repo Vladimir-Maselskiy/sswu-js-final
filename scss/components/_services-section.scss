@@ -74,7 +74,7 @@
 
   &.group_1::before {
     @extend .base_style_for_content_item;
-    background-image: url('../../images/sr.svg');
+    background-image: url('../images/sr.svg');
   }
 
   &.group_2 {
@@ -82,12 +82,12 @@
     background-color: $first-background-color;
     &::before {
       @extend .base_style_for_content_item;
-      background-image: url('../../images/ere.svg');
+      background-image: url('../images/ere.svg');
     }
   }
   &.group_3::before {
     @extend .base_style_for_content_item;
-    background-image: url('../../images/sd.svg');
+    background-image: url('../images/sd.svg');
   }
   &.group_2 > .services__content-title {
     color: $white-color;
