@@ -5,7 +5,7 @@ import {
   burgerMenuBtnRef,
   navRef,
 } from './refs.js';
-import { fetchService } from './utils/fetchService.js';
+// import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
 new Swiper('.swiper', {
@@ -60,7 +60,6 @@ const setActiveStatusToButtonsOnClick = filter => {
 
 //IIFE, відслідковуємо зміну ширини, і задаємо "is-hidden" в бургер меню
 (function () {
-  console.log('iife is hidden', windowWidth);
   if (windowWidth <= 760) {
     navRef.classList.add('is-hidden');
   }
@@ -71,12 +70,6 @@ const onFilterListClick = e => {
   setActiveStatusToButtonsOnClick(e.target.dataset.filter);
 };
 
-const onInputChange = e => {
-  const isValid = e.target.validity.valid;
-  e.target.setValidationMessage =
-    'Тільки латинські літери, перша літера у верхньому регістрі';
-  console.log(e.target);
-};
 const onSubmitForm = e => {
   e.preventDefault();
   const { name, surname, email } = e.target.children;
@@ -118,17 +111,20 @@ const onLoadWindow = () => {
 
 // --------------------нижче по коду, прослуховувачі подій для всього проекту-----------------
 service.addEventListener('click', onFilterListClick);
-formRef.addEventListener('change', onInputChange);
 formRef.addEventListener('submit', onSubmitForm);
 burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
 window.addEventListener('resize', onWindowResize);
 window.addEventListener('load', onLoadWindow);
 
 // -----------імітація отримання json для секції з фільтром------------
-fetch('./data/service.json').then(data => {
-  console.log('data', data);
-  serviceContent = data;
-  showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent)).catch(
-    error => console.log('error in index', error)
-  );
-});
+fetch('./data/service.json', {
+  headers: {
+    'Content-Type': 'application/json',
+    Accept: 'application/json',
+  },
+})
+  .then(res => res.json())
+  .then(data => {
+    serviceContent = data;
+    showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
+  });

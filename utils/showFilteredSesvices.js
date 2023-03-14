@@ -17,5 +17,4 @@ export const showFilteredSesvices = data => {
     listRef.append(itemRef);
   });
   serviceContentRef.append(listRef);
-  console.log(listRef);
 };
