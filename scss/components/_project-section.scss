@@ -6,7 +6,7 @@
   position: relative;
   @extend .container;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 30px;
 }
 
@@ -35,6 +35,7 @@
 
 .project-right-aside-block {
   width: 40%;
+  margin-right: 35px;
 }
 
 .project__image {

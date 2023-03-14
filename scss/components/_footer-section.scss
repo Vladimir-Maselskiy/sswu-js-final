@@ -34,6 +34,7 @@
 .social-links-list {
   display: flex;
   justify-content: space-between;
+  margin-left: 20px;
   width: 192px;
 }
 .footer-logo-block__logo {
@@ -47,7 +48,8 @@
 .footer-menu-list {
   display: flex;
   justify-content: space-around;
-  gap: 10px;
+  margin-left: 20px;
+  gap: 20px;
   width: 50%;
 }
 .footer-menu-title,

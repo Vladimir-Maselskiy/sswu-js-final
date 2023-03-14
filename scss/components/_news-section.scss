@@ -28,9 +28,18 @@
   margin-top: 82px;
 }
 
+.news__item {
+  width: 40%;
+  max-width: 555px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .left-item .news__image {
   @include getImageWithBorder(
-    555px,
+    100%,
     387px,
     -17px,
     -16px,
@@ -41,7 +50,7 @@
 }
 .right-item .news__image {
   @include getImageWithBorder(
-    555px,
+    100%,
     387px,
     -17px,
     -16px,
@@ -64,5 +73,7 @@
 }
 .news__button {
   @extend .section-button;
+  display: block;
   margin-top: 50px;
+  //   margin-top: auto;
 }

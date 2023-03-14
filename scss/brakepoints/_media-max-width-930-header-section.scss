@@ -1,8 +1,6 @@
 .header-section {
   @extend .section;
-  position: sticky;
-  top: -80px;
-  z-index: 2;
+  position: relative;
 }
 
 .header-container {
