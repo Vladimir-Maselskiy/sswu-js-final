@@ -15,11 +15,14 @@ new Swiper('.swiper', {
     prevEl: '.testimonials__button.prev',
   },
 });
-
+// ініціалізація значення контенту секції з фільтром
 let serviceContent = {};
+// початкове значення самого фільтру
 let filterButton = 'all';
+
 let windowWidth = window.innerWidth;
 
+// задаємо початкове значення фільтра в секції about
 const setActiveStatusToButtonAll = () => {
   const elems = service.children;
   [].forEach.call(elems, function (elem) {
@@ -27,9 +30,9 @@ const setActiveStatusToButtonAll = () => {
     if (button.dataset.filter === 'all') button.classList.add('activ');
   });
 };
-
 setActiveStatusToButtonAll();
 
+// задаємо значення фільтра по кліку від юзера
 const setActiveStatusToButtonsOnClick = filter => {
   const elems = serviceRef.children;
   filterButton = filter;
@@ -49,11 +52,13 @@ const setActiveStatusToButtonsOnClick = filter => {
   showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
 };
 
+// IIFE, дійстаємо рік з системної дати і встановлюємо в футері
 (function () {
   const year = new Date().getFullYear();
   copyRightRef.textContent = `Copyright @ ${year} Brandoxide.all right reserved.`;
 })();
 
+//IIFE, відслідковуємо зміну ширини, і задаємо "is-hidden" в бургер меню
 (function () {
   console.log('iife is hidden', windowWidth);
   if (windowWidth <= 760) {
@@ -61,6 +66,7 @@ const setActiveStatusToButtonsOnClick = filter => {
   }
 })();
 
+// --------------нижче по коду оброблювачі подій для всього проекту-----------------
 const onFilterListClick = e => {
   setActiveStatusToButtonsOnClick(e.target.dataset.filter);
 };
@@ -101,12 +107,24 @@ const onWindowResize = () => {
   windowWidth = width;
 };
 
+const onLoadWindow = () => {
+  const loadingScreen = document.getElementById('loading-screen');
+  setTimeout(function () {
+    loadingScreen.style.display = 'none';
+    const mainContent = document.getElementById('main-content');
+    mainContent.style.display = 'block';
+  }, 5000);
+};
+
+// --------------------нижче по коду, прослуховувачі подій для всього проекту-----------------
 service.addEventListener('click', onFilterListClick);
 formRef.addEventListener('change', onInputChange);
 formRef.addEventListener('submit', onSubmitForm);
 burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
 window.addEventListener('resize', onWindowResize);
+window.addEventListener('load', onLoadWindow);
 
+// -----------імітація отримання json для секції з фільтром------------
 fetchService().then(data => {
   serviceContent = data;
   showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
