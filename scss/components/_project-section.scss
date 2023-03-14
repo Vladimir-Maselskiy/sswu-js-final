@@ -6,6 +6,7 @@
   position: relative;
   @extend .container;
   display: flex;
+  padding-top: 92px;
   justify-content: space-between;
   gap: 30px;
 }

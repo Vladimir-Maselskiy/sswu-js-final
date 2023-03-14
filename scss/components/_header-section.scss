@@ -1,7 +1,7 @@
 .header-section {
   @extend .section;
   position: sticky;
-  top: -80px;
+  top: -70px;
   z-index: 2;
 }
 
@@ -11,18 +11,21 @@
   display: flex;
   align-items: center;
   padding-top: 102px;
-  padding-bottom: 92px;
 }
 
 .header-logo {
   @extend .logo;
 }
-
+.header-burger {
+  display: none;
+}
+.header-nav-block {
+  margin-left: auto;
+}
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-left: auto;
   width: 650px;
 }
 .header-nav__item {
@@ -33,6 +36,7 @@
   border-radius: 20px;
   padding: 5px;
   color: $first-text-color;
+  font-weight: bold;
   transition: transform 0.5s, color 0.5s, border-color 0.5s;
 
   &:hover {

@@ -1,4 +1,10 @@
-import { serviceRef, formRef, copyRightRef } from './refs.js';
+import {
+  serviceRef,
+  formRef,
+  copyRightRef,
+  burgerMenuBtnRef,
+  navRef,
+} from './refs.js';
 import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
@@ -12,6 +18,7 @@ new Swiper('.swiper', {
 
 let serviceContent = {};
 let filterButton = 'all';
+let windowWidth = window.innerWidth;
 
 const setActiveStatusToButtonAll = () => {
   const elems = service.children;
@@ -45,7 +52,13 @@ const setActiveStatusToButtonsOnClick = filter => {
 (function () {
   const year = new Date().getFullYear();
   copyRightRef.textContent = `Copyright @ ${year} Brandoxide.all right reserved.`;
-  console.log('iife', year);
+})();
+
+(function () {
+  console.log('iife is hidden', windowWidth);
+  if (windowWidth <= 760) {
+    navRef.classList.add('is-hidden');
+  }
 })();
 
 const onFilterListClick = e => {
@@ -72,9 +85,27 @@ const onSubmitForm = e => {
   }
 };
 
+const onBurgerMenuClick = () => {
+  console.log('onBurgerMenuClick');
+  navRef.classList.toggle('is-hidden');
+};
+
+const onWindowResize = () => {
+  const width = window.innerWidth;
+  if (width > 760) {
+    navRef.classList.remove('is-hidden');
+  }
+  if (windowWidth > 760 && width <= 760) {
+    navRef.classList.add('is-hidden');
+  }
+  windowWidth = width;
+};
+
 service.addEventListener('click', onFilterListClick);
 formRef.addEventListener('change', onInputChange);
 formRef.addEventListener('submit', onSubmitForm);
+burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
+window.addEventListener('resize', onWindowResize);
 
 fetchService().then(data => {
   serviceContent = data;
