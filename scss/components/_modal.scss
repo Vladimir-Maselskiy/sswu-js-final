@@ -1,0 +1,34 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vw;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Style for modal */
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  z-index: 11;
+  & p {
+    margin-top: 10px;
+  }
+  & .modal__confirm-button {
+    @extend .section-button;
+    margin-top: 20px;
+  }
+  & .modal__close-document-button {
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+}

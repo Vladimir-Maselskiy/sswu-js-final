@@ -3,6 +3,8 @@
 @import './components/base';
 @import './components/loader-section';
 @import './components/header-section';
+@import './components/weather-section';
+
 @import './components/project-section';
 @import './components/services-section';
 @import './components/about-section';
@@ -11,4 +13,7 @@
 @import './components/news-section';
 @import './components/form-section';
 @import './components/footer-section';
+@import './components/progress-bar';
+@import './components/modal';
 @import './brakepoints/mobile&tablet-header-section';
+@import './brakepoints/mobile&tablet-completed-section';

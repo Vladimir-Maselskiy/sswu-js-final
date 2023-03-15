@@ -4,9 +4,14 @@ import {
   copyRightRef,
   burgerMenuBtnRef,
   navRef,
+  weatherTempRef,
+  weatherWindRef,
+  weatherPressureRef,
 } from './refs.js';
+import { fetchWeather } from './utils/fetchWeather.js';
 // import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
+import { inactiveTimer } from './utils/inactiveTimer.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
 new Swiper('.swiper', {
   loop: true,
@@ -15,10 +20,15 @@ new Swiper('.swiper', {
     prevEl: '.testimonials__button.prev',
   },
   breakpoints: {
-    // when window width is >= 760px
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+      slidesPerGroup: 1,
+    },
     1060: {
       slidesPerView: 2,
       spaceBetween: 20,
+      slidesPerGroup: 2,
     },
   },
 });
@@ -26,8 +36,19 @@ new Swiper('.swiper', {
 let serviceContent = {};
 // початкове значення самого фільтру
 let filterButton = 'all';
+// шніціалізація змінної погоди;
+let weatherData;
 
 let windowWidth = window.innerWidth;
+
+fetchWeather().then(data => {
+  const temp = data.main.temp;
+  const wind = data.wind.speed;
+  const pressure = data.main.pressure;
+  weatherTempRef.textContent = `${temp}C`;
+  weatherWindRef.textContent = `${wind}m/s`;
+  weatherPressureRef.textContent = `${pressure}mm`;
+});
 
 // задаємо початкове значення фільтра в секції about
 const setActiveStatusToButtonAll = () => {
@@ -58,6 +79,8 @@ const setActiveStatusToButtonsOnClick = filter => {
   });
   showFilteredSesvices(getFilteredSesvices(filterButton, serviceContent));
 };
+// запускаємо функцію-таймер відслідковування часу неактивності на сторінці
+inactiveTimer();
 
 // IIFE, дійстаємо рік з системної дати і встановлюємо в футері
 (function () {
@@ -116,13 +139,22 @@ const onLoadWindow = () => {
   }, 5000);
 };
 
+function updateProgressBar() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById('progress-bar').style.width = scrolled + '%';
+}
+
 // --------------------нижче по коду, прослуховувачі подій для всього проекту-----------------
 service.addEventListener('click', onFilterListClick);
 formRef.addEventListener('submit', onSubmitForm);
 burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
 window.addEventListener('resize', onWindowResize);
 window.addEventListener('load', onLoadWindow);
-
+window.onscroll = updateProgressBar;
 // -----------імітація отримання json для секції з фільтром------------
 fetch('./data/service.json', {
   headers: {

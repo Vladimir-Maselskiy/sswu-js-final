@@ -1,0 +1,46 @@
+.weather-section {
+  @extend .section;
+}
+
+.weather-container {
+  position: relative;
+  @extend .container;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  min-width: 720px;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  color: $second-text-color;
+  font-size: 30px;
+}
+
+@media screen and (max-width: 760px) {
+  .weather-container {
+    font-size: 12px;
+    // flex-wrap: wrap;
+    min-width: 440px;
+  }
+}
+
+.weather-city {
+  font-weight: bold;
+}
+
+.weather-icon {
+  width: 40px;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 20px;
+}
+.temp {
+  background-image: url('../images/temp.svg');
+}
+.wind {
+  background-image: url('../images/wind.svg');
+}
+.pressure {
+  background-image: url('../images/pressure.svg');
+}
