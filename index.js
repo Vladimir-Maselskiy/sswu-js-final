@@ -7,12 +7,14 @@ import {
   weatherTempRef,
   weatherWindRef,
   weatherPressureRef,
+  userAnimationRef,
 } from './refs.js';
 import { fetchWeather } from './utils/fetchWeather.js';
 // import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { inactiveTimer } from './utils/inactiveTimer.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
+import { userAnimation } from './utils/userAnimation.js';
 new Swiper('.swiper', {
   loop: true,
   navigation: {
@@ -34,8 +36,10 @@ new Swiper('.swiper', {
 });
 // ініціалізація значення контенту секції з фільтром
 let serviceContent = {};
-// початкове значення самого фільтру
+
+// початкове значення фільтру JSON
 let filterButton = 'all';
+
 // шніціалізація змінної погоди;
 let weatherData;
 
@@ -60,7 +64,7 @@ const setActiveStatusToButtonAll = () => {
 };
 setActiveStatusToButtonAll();
 
-// задаємо значення фільтра по кліку від юзера
+// задаємо значення фільтра які вибрав  юзер
 const setActiveStatusToButtonsOnClick = filter => {
   const elems = serviceRef.children;
   filterButton = filter;
@@ -95,7 +99,7 @@ inactiveTimer();
   }
 })();
 
-// --------------нижче по коду оброблювачі подій для всього проекту-----------------
+// -------------- оброблювачі подій для всього проекту-----------------
 const onFilterListClick = e => {
   setActiveStatusToButtonsOnClick(e.target.dataset.filter);
 };
@@ -110,7 +114,8 @@ const onSubmitForm = e => {
   };
   localStorage.setItem('user', JSON.stringify(user));
   if (user.name === 'Volodymyr') {
-    console.log('animation');
+    userAnimationRef.classList.remove('display-none');
+    // userAnimationRef.classList.add('display-block');
   }
 };
 
@@ -136,7 +141,7 @@ const onLoadWindow = () => {
     loadingScreen.style.display = 'none';
     const mainContent = document.getElementById('main-content');
     mainContent.style.display = 'block';
-  }, 5000);
+  }, 1000);
 };
 
 function updateProgressBar() {
@@ -148,14 +153,15 @@ function updateProgressBar() {
   document.getElementById('progress-bar').style.width = scrolled + '%';
 }
 
-// --------------------нижче по коду, прослуховувачі подій для всього проекту-----------------
+// -------------------- прослуховувачі подій для всього проекту-----------------
 service.addEventListener('click', onFilterListClick);
 formRef.addEventListener('submit', onSubmitForm);
 burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
 window.addEventListener('resize', onWindowResize);
 window.addEventListener('load', onLoadWindow);
 window.onscroll = updateProgressBar;
-// -----------імітація отримання json для секції з фільтром------------
+
+// -----------отримуємо json для секції з фільтром------------
 fetch('./data/service.json', {
   headers: {
     'Content-Type': 'application/json',
