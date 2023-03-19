@@ -13,6 +13,8 @@ import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { inactiveTimer } from './utils/inactiveTimer.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
 import { startUserAnimation } from './utils/startUserAnimation.js';
+
+// налаштування слайдера
 new Swiper('.swiper', {
   loop: true,
   navigation: {
@@ -39,10 +41,10 @@ let serviceContent = {};
 let filterButton = 'all';
 
 // шніціалізація змінної погоди;
-let weatherData;
 
 let windowWidth = window.innerWidth;
 
+// фетч даних зі стороннього апі(погода)
 fetchWeather().then(data => {
   const temp = data.main.temp;
   const wind = data.wind.speed;
@@ -111,12 +113,11 @@ const onSubmitForm = e => {
     email: email.value,
   };
   localStorage.setItem('user', JSON.stringify(user));
+  // запуск привітальної анімації конкретного юзера
 
+  // if (user.name === 'Volodymyr') {
   startUserAnimation(user.name);
-  if (user.name === 'Volodymyr') {
-    // userAnimationRef.classList.remove('display-none');
-    // userAnimationRef.classList.add('display-block');
-  }
+  // }
 };
 
 const onBurgerMenuClick = () => {
@@ -135,6 +136,7 @@ const onWindowResize = () => {
   windowWidth = width;
 };
 
+// запуск першої анімації, імітація завантаження сторінки
 const onLoadWindow = () => {
   const loadingScreen = document.getElementById('loading-screen');
   setTimeout(function () {
@@ -144,6 +146,7 @@ const onLoadWindow = () => {
   }, 1000);
 };
 
+// прогресбар скролінгу сторінки
 function updateProgressBar() {
   var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   var height =

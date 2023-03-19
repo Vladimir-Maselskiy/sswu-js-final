@@ -20,13 +20,15 @@
   display: none;
 }
 .header-nav-block {
+  display: flex;
+  align-items: center;
   margin-left: auto;
+  width: 638px;
 }
 .header-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 650px;
 }
 .header-nav__item {
   font-weight: 400;
@@ -51,6 +53,8 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 2;
+  height: 31px;
+  min-width: 65px;
   width: 97px;
   margin-left: 64px;
   background-color: $first-background-color;

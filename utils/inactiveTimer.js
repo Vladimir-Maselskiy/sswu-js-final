@@ -5,9 +5,10 @@ const buttonCloseDocumentRef = modalRef.querySelector(
 );
 buttonComfirmRef.addEventListener('click', onModalButtonClick);
 buttonCloseDocumentRef.addEventListener('click', onButtonCloseDocumentClick);
-var inactiveTime = 0;
-var timeout = 60000; // 1 minute
-var confirmationTimeout = 10000; // 10 seconds;
+let inactiveTime = 0;
+let timeout = 10 * 60 * 1000; // 10 minute
+let confirmationTimeout = 10 * 1000; // 10 seconds;
+let timeoutID;
 
 function onButtonCloseDocumentClick() {
   console.log('onButtonCloseDocumentClick click');
@@ -16,6 +17,7 @@ function onButtonCloseDocumentClick() {
 function onModalButtonClick() {
   modalRef.classList.add('is-hidden');
   handleUserActivity();
+  clearTimeout(timeoutID);
 }
 
 function checkActivity() {
@@ -23,7 +25,7 @@ function checkActivity() {
   if (inactiveTime >= timeout) {
     modalRef.classList.remove('is-hidden');
 
-    setTimeout(function () {
+    timeoutID = setTimeout(function () {
       buttonCloseDocumentRef.click();
     }, confirmationTimeout);
   }

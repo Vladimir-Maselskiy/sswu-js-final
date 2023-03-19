@@ -1,5 +1,6 @@
 .project-section {
   @extend .section;
+  position: relative;
 }
 
 .project-container {
@@ -49,4 +50,13 @@
   );
   margin-top: 32px;
   margin-left: 35px;
+}
+
+.project-section__decor {
+  position: absolute;
+  width: 209px;
+  height: 150px;
+  bottom: 0;
+  left: 0;
+  background-image: url('../../images//dots-decor.png');
 }
