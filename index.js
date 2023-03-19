@@ -7,6 +7,7 @@ import {
   weatherTempRef,
   weatherWindRef,
   weatherPressureRef,
+  newsItemsRef,
 } from './refs.js';
 import { fetchWeather } from './utils/fetchWeather.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
@@ -156,12 +157,36 @@ function updateProgressBar() {
   document.getElementById('progress-bar').style.width = scrolled + '%';
 }
 
+// функція перевірки - чи знайохиться ДОМ-елемент у вюпорті
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  console.log(rect);
+  return (
+    rect.top >= 0 &&
+    rect.left >= 0 &&
+    rect.bottom <=
+      (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+}
+
+const showNewsItems = () => {
+  newsItemsRef.forEach(item => {
+    const descriptionRef = item.nextSibling.nextSibling;
+    console.log(descriptionRef);
+    if (isElementInViewport(item)) {
+      descriptionRef.classList.remove('is-hidden');
+    } else descriptionRef.classList.add('is-hidden');
+  });
+};
+
 // -------------------- прослуховувачі подій для всього проекту-----------------
 service.addEventListener('click', onFilterListClick);
 formRef.addEventListener('submit', onSubmitForm);
 burgerMenuBtnRef.addEventListener('click', onBurgerMenuClick);
 window.addEventListener('resize', onWindowResize);
 window.addEventListener('load', onLoadWindow);
+window.addEventListener('scroll', showNewsItems);
 window.onscroll = updateProgressBar;
 
 // -----------отримуємо json для секції з фільтром------------
