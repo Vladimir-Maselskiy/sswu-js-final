@@ -7,14 +7,12 @@ import {
   weatherTempRef,
   weatherWindRef,
   weatherPressureRef,
-  userAnimationRef,
 } from './refs.js';
 import { fetchWeather } from './utils/fetchWeather.js';
-// import { fetchService } from './utils/fetchService.js';
 import { getFilteredSesvices } from './utils/getFilteredSesvices.js';
 import { inactiveTimer } from './utils/inactiveTimer.js';
 import { showFilteredSesvices } from './utils/showFilteredSesvices.js';
-import { userAnimation } from './utils/userAnimation.js';
+import { startUserAnimation } from './utils/startUserAnimation.js';
 new Swiper('.swiper', {
   loop: true,
   navigation: {
@@ -113,8 +111,10 @@ const onSubmitForm = e => {
     email: email.value,
   };
   localStorage.setItem('user', JSON.stringify(user));
+
+  startUserAnimation(user.name);
   if (user.name === 'Volodymyr') {
-    userAnimationRef.classList.remove('display-none');
+    // userAnimationRef.classList.remove('display-none');
     // userAnimationRef.classList.add('display-block');
   }
 };

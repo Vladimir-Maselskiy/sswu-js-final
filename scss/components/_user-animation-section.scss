@@ -6,16 +6,34 @@
   height: 100vh;
 }
 
+.animation-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    width: 50%;
+    min-width: 320px;
+    // height: 100%;
+    margin: 0 auto;
+    & > div {
+      display: flex;
+      margin-bottom: 30px;
+    }
+  }
+}
+
 .letter {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%) scale(0);
-  // color: #000;
-  // color: red;
-  font-size: 30px;
+  display: block;
+  font-size: 24px;
+  margin-left: 15px;
   font-weight: bold;
-  animation: appear 5s forwards;
+  animation: appear 2s forwards;
 }
 
 @keyframes appear {
@@ -23,9 +41,9 @@
     transform: scale(0);
     color: white;
   }
-  20% {
-    transform: scale(1.5);
-    color: #ff6b6b;
+  50% {
+    transform: scale(3);
+    color: $second-accent-color;
   }
   100% {
     transform: scale(2);
