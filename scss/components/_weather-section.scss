@@ -4,14 +4,13 @@
 
 .weather-container {
   position: relative;
-  @extend .container;
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 50%;
   min-width: 720px;
-  padding-top: 50px;
-  padding-bottom: 30px;
+  padding: 50px 64px 30px;
+  margin: 0 auto;
   color: $second-text-color;
   font-size: 30px;
 }
@@ -19,7 +18,6 @@
 @media screen and (max-width: 760px) {
   .weather-container {
     font-size: 12px;
-    // flex-wrap: wrap;
     min-width: 440px;
   }
 }
