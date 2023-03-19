@@ -1,0 +1,31 @@
+@media screen and (max-width: 1061px) {
+  .about-top-box__left-aside-block,
+  .about-top-box__right-aside-block,
+  .about-bottom-box__left-aside-block,
+  .about-bottom-box__right-aside-block {
+    width: 50%;
+    gap: 20px;
+  }
+  .about-top-box__message {
+    word-break: break-all;
+  }
+}
+@media screen and (max-width: 761px) {
+  .about-top-box,
+  .about-bottom-box {
+    flex-direction: column;
+    & .about-top-box__left-aside-block {
+      order: 2;
+    }
+    & .about-top-box__right-aside-block {
+      order: 1;
+    }
+  }
+  .about-top-box__left-aside-block,
+  .about-top-box__right-aside-block,
+  .about-bottom-box__left-aside-block,
+  .about-bottom-box__right-aside-block {
+    width: 100%;
+    gap: 20px;
+  }
+}

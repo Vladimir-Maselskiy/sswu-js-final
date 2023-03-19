@@ -2,7 +2,7 @@ const userAnimationRef = document.querySelector('.animation-container');
 const userSectionRef = document.querySelector('.user-animation-section');
 
 export const startUserAnimation = userName => {
-  const data = 'Hellow ' + userName + ' today you have discount 120%';
+  const data = 'Hello ' + userName + ' today you have discount 120%';
   userAnimationRef.innerHTML = '';
   const containerRef = document.createElement('div');
   let wordRef = document.createElement('div');

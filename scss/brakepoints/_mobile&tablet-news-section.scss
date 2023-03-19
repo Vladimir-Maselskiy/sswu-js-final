@@ -1,0 +1,10 @@
+@media screen and (max-width: 761px) {
+  .news__content-block {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .news__item.left-item,
+  .news__item.right-item {
+    width: 100%;
+  }
+}

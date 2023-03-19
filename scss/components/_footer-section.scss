@@ -51,6 +51,11 @@
   margin-left: 20px;
   gap: 20px;
   width: 50%;
+  & > li {
+    width: 30%;
+    flex-shrink: 0;
+    overflow: hidden;
+  }
 }
 .footer-menu-title,
 .footer-social-links__title {
@@ -109,4 +114,14 @@
   margin-top: 69px;
   text-align: center;
   line-height: 1;
+}
+
+.footer-section__decor {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transform: translateY(-50%);
+  width: 209px;
+  height: 150px;
+  background-image: url('../images//dots-decor.png');
 }

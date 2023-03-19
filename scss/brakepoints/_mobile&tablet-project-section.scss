@@ -1,0 +1,16 @@
+@media screen and (max-width: 1061px) {
+  .project-left-aside-block {
+    width: 50%;
+    gap: 20px;
+  }
+}
+@media screen and (max-width: 1061px) {
+  .project-container {
+    flex-direction: column;
+  }
+  .project-left-aside-block,
+  .project-right-aside-block {
+    width: 100%;
+    gap: 20px;
+  }
+}

@@ -1,5 +1,6 @@
 .services-section {
   @extend .section;
+  position: relative;
 }
 
 .services-container {
@@ -70,7 +71,7 @@
   padding: 25px 25px 25px 102px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.14);
   border-radius: 60px 0px;
-  max-height: 161px;
+  max-height: 171px;
 
   &.group_1::before {
     @extend .base_style_for_content_item;
@@ -104,4 +105,14 @@
 }
 .services__content-description {
   @extend .section-description;
+}
+
+.services-section__decor {
+  position: absolute;
+  bottom: 0px;
+  right: 0;
+  transform: translateY(-50%);
+  width: 209px;
+  height: 150px;
+  background-image: url('../images/dots2-decor.png');
 }

@@ -47,6 +47,17 @@
   width: 50%;
   max-width: 716px;
 }
+.about-bottom-box_decor-20 {
+  font-size: 155px;
+  font-weight: 700;
+  max-width: 330px;
+  // -webkit-background-clip: text;
+  background-clip: text;
+  background: url('../images/pic20.png');
+
+  color: transparent;
+}
+
 .about-bottom-box__right-aside-block {
   margin-right: 31px;
 }
