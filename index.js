@@ -170,6 +170,7 @@ function isElementInViewport(el) {
   );
 }
 
+// показуємо інформацію якщо юзер доскролив до конкретного блоку (новини)
 const showNewsItems = () => {
   newsItemsRef.forEach(item => {
     const descriptionRef = item.nextSibling.nextSibling;
